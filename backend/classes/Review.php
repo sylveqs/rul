@@ -1,7 +1,7 @@
 <?php
 class Review
 {
-    /** Возвращает текст ошибки или null при успехе. */
+
     public static function create(int $userId, int $appId, int $rating, string $comment): ?string
     {
         $a = Database::one('SELECT * FROM applications WHERE id=? AND user_id=?', [$appId, $userId]);

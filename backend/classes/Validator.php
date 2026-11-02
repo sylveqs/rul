@@ -1,5 +1,5 @@
 <?php
-/** Правила валидации полей. */
+
 class Validator
 {
     public static function parseDate(string $s): ?string

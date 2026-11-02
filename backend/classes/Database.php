@@ -1,5 +1,5 @@
 <?php
-/** Обёртка над PDO: одно соединение, только подготовленные запросы. */
+
 class Database
 {
     private static ?PDO $pdo = null;

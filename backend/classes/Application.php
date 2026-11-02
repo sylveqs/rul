@@ -1,5 +1,5 @@
 <?php
-/** Заявки на практические занятия. */
+
 class Application
 {
     const NEW = 1, CONFIRMED = 2, DONE = 3, CANCELED = 4;
@@ -10,7 +10,7 @@ class Application
 
     const DURATIONS = [45, 90, 120];
 
-    /** Справочники в виде [id, label] для списков выбора. */
+
     public static function dict(string $table): array
     {
         $label = ['categories' => "CONCAT(name, ' — ', description)", 'slots' => 'time_slot',
@@ -31,7 +31,7 @@ class Application
         );
     }
 
-    /** Возвращает ошибки по полям; при отсутствии ошибок создаёт заявку со статусом «Новая». */
+
     public static function create(int $userId, array $d): array
     {
         $e = [];
@@ -96,7 +96,7 @@ class Application
         return (int)Database::value('SELECT COUNT(*) FROM applications WHERE lesson_date=? AND status_id<>?', [$date, self::CANCELED]);
     }
 
-    /** Смена статуса по допустимым переходам. Возвращает текст ошибки или null. */
+
     public static function changeStatus(int $id, int $new): ?string
     {
         $a = Database::one('SELECT * FROM applications WHERE id=?', [$id]);
