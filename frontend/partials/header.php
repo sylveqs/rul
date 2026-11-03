@@ -1,5 +1,5 @@
 <?php
-/** Шапка: меню, flash-сообщения. Перед подключением страница задаёт $title. */
+
 $user = Auth::user();
 $flashes = takeFlash();
 $errors = $errors ?? [];
